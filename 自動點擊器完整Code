@@ -1,0 +1,29 @@
+import pyautogui
+import time
+
+def auto_click(x, y, interval, repetitions):
+    """
+    自動點擊指定的螢幕座標。
+    
+    參數：
+    x: 點擊的 x 座標
+    y: 點擊的 y 座標
+    interval: 點擊間隔（秒）
+    repetitions: 點擊次數
+    """
+    print(f"開始自動點擊 (x={x}, y={y})，點擊間隔={interval}s，總共點擊次數={repetitions}")
+    time.sleep(3)  # 等待 3 秒，給使用者準備時間
+    for i in range(repetitions):
+        pyautogui.click(x, y)
+        print(f"已完成第 {i + 1} 次點擊")
+        time.sleep(interval)
+    print("點擊完成！")
+
+if __name__ == "__main__":
+    # 修改這些參數以適應你的需求
+    x_coord = 500  # 點擊的 x 座標
+    y_coord = 400  # 點擊的 y 座標
+    click_interval = 1  # 每次點擊間隔 (秒)
+    click_count = 10  # 總共點擊次數
+
+    auto_click(x_coord, y_coord, click_interval, click_count)
